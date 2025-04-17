@@ -98,25 +98,14 @@ To learn more about React Native, take a look at the following resources:
 
 src/
 ├── assets/
-│   └── schedule.json
+│   └── data/
+│       └── schedule.json        // 사용자 시간표 데이터
 ├── components/
-│   └── ScheduleTable.tsx      // Table UI 컴포넌트
+│   └── ScheduleTable.tsx        // 시간표 테이블 UI 컴포넌트
 ├── screens/
-│   └── ScheduleScreen.tsx     // 스크린 진입점
-└── utils/
-    └── scheduleParser.ts      // JSON 파싱 로직 분리 가능
-
-// 최종
-    /src
-  /assets
-    └── data
-        └── schedule.json
-  /components
-    └── ScheduleTable.tsx
-  /screens
-    └── ScheduleScreen.tsx
-  /utils
-    └── parseSchedule.ts
-  /types
-    └── schedule.d.ts
-App.tsx
+│   └── ScheduleScreen.tsx       // 스크린 진입점
+├── utils/
+│   └── parseSchedule.ts         // JSON 파싱 로직
+├── types/
+│   └── schedule.d.ts            // 시간표 관련 TypeScript 타입 정의
+App.tsx                          // 앱 진입점

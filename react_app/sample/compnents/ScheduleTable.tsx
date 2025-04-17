@@ -1,16 +1,15 @@
-// src/components/ScheduleTable.tsx
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Weekday, ScheduleSlot } from '.types/schedule';
+import { Week, GroupedSchedule } from '../types/schedule';
 
 interface Props {
   title: string;
-  days: Weekday[];
-  scheduleMap: Record<string, Record<Weekday, string[]>>;
+  days: Week[];
+  scheduleMap: GroupedSchedule;
 }
 
 const ScheduleTable: React.FC<Props> = ({ title, days, scheduleMap }) => {
-  const times = Object.keys(scheduleMap).sort(); // 시간 정렬
+  const times = Object.keys(scheduleMap).sort();
 
   return (
     <View style={styles.container}>
@@ -36,11 +35,11 @@ const ScheduleTable: React.FC<Props> = ({ title, days, scheduleMap }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { padding: 10, marginVertical: 10, backgroundColor: '#fff' },
-  title: { fontSize: 18, fontWeight: 'bold', marginBottom: 8 },
-  headerRow: { flexDirection: 'row', borderBottomWidth: 1 },
-  headerCell: { flex: 1, fontWeight: 'bold', textAlign: 'center' },
-  row: { flexDirection: 'row', borderBottomWidth: 0.5, paddingVertical: 4 },
+  container: { padding: 12, backgroundColor: '#f9f9f9', marginVertical: 10 },
+  title: { fontSize: 20, fontWeight: 'bold', marginBottom: 10 },
+  headerRow: { flexDirection: 'row', borderBottomWidth: 1, paddingBottom: 4 },
+  headerCell: { flex: 1, fontWeight: '600', textAlign: 'center' },
+  row: { flexDirection: 'row', borderBottomWidth: 0.5, paddingVertical: 6 },
   cell: { flex: 1, textAlign: 'center' },
 });
 

@@ -1,8 +1,6 @@
-
 import {
   GroupedResult,
   GroupedSchedule,
-  ScheduleEntry,
   UserSchedule,
   Weekday,
   Weekend,
@@ -18,7 +16,9 @@ export const groupScheduleByTime = (users: UserSchedule): GroupedResult => {
 
   Object.entries(users).forEach(([user, schedules]) => {
     schedules.forEach((entry) => {
-      const target = weekdays.includes(entry.week as Weekday) ? weekdaysResult : weekendsResult;
+      const target = weekdays.includes(entry.week as Weekday)
+        ? weekdaysResult
+        : weekendsResult;
 
       if (!target[entry.time]) {
         target[entry.time] = {};
@@ -26,6 +26,7 @@ export const groupScheduleByTime = (users: UserSchedule): GroupedResult => {
       if (!target[entry.time][entry.week]) {
         target[entry.time][entry.week] = [];
       }
+
       target[entry.time][entry.week]!.push(user);
     });
   });

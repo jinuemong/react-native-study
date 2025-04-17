@@ -1,12 +1,13 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
-import ScheduleTable from './components/ScheduleTable';
-import scheduleData from '../data/schedule/sampleSchedule.json';
-import { groupScheduleByTime } from '../utils/groupScheduleByTime';
-import { Weekday, Weekend } from '../types/schedule';
+import ScheduleTable from '../compnents/ScheduleTable';
+import scheduleJson from '../data/schedule.json';
+import { groupScheduleByTime } from '../utils/groupSchedule';
+import { Weekday, Weekend, UserSchedule } from '../types/schedule';
 
 const ScheduleScreen = () => {
-  const { weekdays, weekends } = groupScheduleByTime(scheduleData.USER);
+  const users = scheduleJson.TOTAL.KR.USER as UserSchedule;
+  const { weekdays, weekends } = groupScheduleByTime(users);
 
   const weekdayOrder: Weekday[] = ['MON', 'TUE', 'WED', 'THU', 'FRI'];
   const weekendOrder: Weekend[] = ['SAT', 'SUN'];
