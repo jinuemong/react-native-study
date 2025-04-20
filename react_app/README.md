@@ -110,3 +110,9 @@ src/
 │   └── schedule.d.ts            // 시간표 관련 TypeScript 타입 정의
 App.tsx                          // 앱 진입점
 ```
+
+### 타입 스크립트 참고
+- https://hanmailco34.tistory.com/category/TypeScript
+
+### RN 참고
+- https://devbksheen.tistory.com/entry/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%86%8D%EC%84%B1-props-defaultProps

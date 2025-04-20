@@ -1,11 +1,14 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Week, GroupedSchedule } from '../types/schedule';
 
 interface Props {
   title: string;
-  days: Week[];
-  scheduleMap: GroupedSchedule;
+  days: string[];
+  scheduleMap: {
+    [time: string]: {
+      [day: string]: string[];
+    };
+  };
 }
 
 const ScheduleTable: React.FC<Props> = ({ title, days, scheduleMap }) => {
@@ -14,19 +17,31 @@ const ScheduleTable: React.FC<Props> = ({ title, days, scheduleMap }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
+
       <View style={styles.headerRow}>
-        <Text style={styles.headerCell}>Time</Text>
+        <View style={styles.timeCell}>
+          <Text style={styles.headerCell}>Time</Text>
+        </View>
         {days.map((day) => (
-          <Text key={day} style={styles.headerCell}>{day}</Text>
+          <View key={day} style={styles.cell}>
+            <Text style={styles.headerCell}>{day}</Text>
+          </View>
         ))}
       </View>
+
       {times.map((time) => (
         <View key={time} style={styles.row}>
-          <Text style={styles.cell}>{time}</Text>
+          <View style={styles.timeCell}>
+            <Text style={styles.timeText}>{time}</Text>
+          </View>
           {days.map((day) => (
-            <Text key={day} style={styles.cell}>
-              {scheduleMap[time]?.[day]?.join(', ') ?? ''}
-            </Text>
+            <View key={day} style={styles.cell}>
+              {(scheduleMap[time]?.[day] ?? []).map((item, index) => (
+                <Text key={index} style={styles.itemText}>
+                  {item}
+                </Text>
+              ))}
+            </View>
           ))}
         </View>
       ))}
@@ -35,12 +50,56 @@ const ScheduleTable: React.FC<Props> = ({ title, days, scheduleMap }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { padding: 12, backgroundColor: '#f9f9f9', marginVertical: 10 },
-  title: { fontSize: 20, fontWeight: 'bold', marginBottom: 10 },
-  headerRow: { flexDirection: 'row', borderBottomWidth: 1, paddingBottom: 4 },
-  headerCell: { flex: 1, fontWeight: '600', textAlign: 'center' },
-  row: { flexDirection: 'row', borderBottomWidth: 0.5, paddingVertical: 6 },
-  cell: { flex: 1, textAlign: 'center' },
+  container: {
+    padding: 12,
+    backgroundColor: '#f9f9f9',
+    marginVertical: 10,
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    textAlign: 'center',
+  },
+  headerRow: {
+    flexDirection: 'row',
+    borderBottomWidth: 1,
+    borderColor: '#ccc',
+  },
+  headerCell: {
+    fontWeight: '600',
+    textAlign: 'center',
+    padding: 8,
+  },
+  row: {
+    flexDirection: 'row',
+  },
+  timeCell: {
+    width: 90, 
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#ddd',
+    padding: 6,
+  },
+  timeText: {
+    fontWeight: '600',
+    fontSize: 13,
+    textAlign: 'center',
+  },
+  cell: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#ddd',
+    paddingVertical: 6,
+  },
+  itemText: {
+    fontSize: 14,
+    textAlign: 'center',
+    lineHeight: 20,
+  },
 });
 
 export default ScheduleTable;

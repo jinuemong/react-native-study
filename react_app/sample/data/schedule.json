@@ -1,70 +1,154 @@
 {
     "TOTAL": {
-      "KR": {
-        "TimeZone": "UTC+9",
-        "USER": {
-          "Alice": [
-            { "week": "MON", "time": "00:15", "code": "code1" },
-            { "week": "SAT", "time": "02:00", "code": "code2" }
-          ],
-          "Bob": [
-            { "week": "TUE", "time": "00:15", "code": "code3" }
-          ],
-          "Charlie": [
-            { "week": "WED", "time": "02:00", "code": "code4" }
-          ],
-          "David": [
-            { "week": "FRI", "time": "02:00", "code": "code5" }
-          ],
-          "Eve": [
-            { "week": "SAT", "time": "00:15", "code": "code6" }
-          ],
-          "Frank": [
-            { "week": "SUN", "time": "00:15", "code": "code7" }
-          ],
-          "Grace": [
-            { "week": "MON", "time": "02:00", "code": "code8" }
-          ],
-          "Hannah": [
-            { "week": "THU", "time": "00:15", "code": "code9" }
-          ],
-          "Ivy": [
-            { "week": "WED", "time": "00:15", "code": "code10" }
-          ],
-          "Jack": [
-            { "week": "FRI", "time": "00:15", "code": "code11" }
-          ],
-          "Ken": [
-            { "week": "SAT", "time": "02:00", "code": "code12" }
-          ],
-          "Leo": [
-            { "week": "SUN", "time": "02:00", "code": "code13" }
-          ],
-          "Mia": [
-            { "week": "MON", "time": "00:15", "code": "code14" }
-          ],
-          "Nina": [
-            { "week": "TUE", "time": "02:00", "code": "code15" }
-          ],
-          "Oscar": [
-            { "week": "THU", "time": "02:00", "code": "code16" }
-          ],
-          "Paul": [
-            { "week": "WED", "time": "00:15", "code": "code17" }
-          ],
-          "Quinn": [
-            { "week": "FRI", "time": "00:15", "code": "code18" }
-          ],
-          "Rachel": [
-            { "week": "SAT", "time": "00:15", "code": "code19" }
-          ],
-          "Sam": [
-            { "week": "SUN", "time": "00:15", "code": "code20" }
-          ],
-          "Tom": [
-            { "week": "TUE", "time": "00:15", "code": "code21" }
-          ]
+        "KR": {
+            "TimeZone": "UTC+9",
+            "USER": {
+                "Alice": [
+                    {
+                        "week": "MON",
+                        "time": "00:15",
+                        "code": "code1"
+                    },
+                    {
+                        "week": "SAT",
+                        "time": "02:00",
+                        "code": "code2"
+                    }
+                ],
+                "Bob": [
+                    {
+                        "week": "TUE",
+                        "time": "00:15",
+                        "code": "code3"
+                    }
+                ],
+                "Charlie": [
+                    {
+                        "week": "WED",
+                        "time": "02:00",
+                        "code": "code4"
+                    }
+                ],
+                "David": [
+                    {
+                        "week": "FRI",
+                        "time": "02:00",
+                        "code": "code5"
+                    }
+                ],
+                "Eve": [
+                    {
+                        "week": "SAT",
+                        "time": "00:15",
+                        "code": "code6"
+                    }
+                ],
+                "Frank": [
+                    {
+                        "week": "SUN",
+                        "time": "00:15",
+                        "code": "code7"
+                    }
+                ],
+                "Grace": [
+                    {
+                        "week": "MON",
+                        "time": "02:00",
+                        "code": "code8"
+                    }
+                ],
+                "Hannah": [
+                    {
+                        "week": "THU",
+                        "time": "00:15",
+                        "code": "code9"
+                    }
+                ],
+                "Ivy": [
+                    {
+                        "week": "WED",
+                        "time": "00:15",
+                        "code": "code10"
+                    }
+                ],
+                "Jack": [
+                    {
+                        "week": "FRI",
+                        "time": "00:15",
+                        "code": "code11"
+                    }
+                ],
+                "Ken": [
+                    {
+                        "week": "SAT",
+                        "time": "02:00",
+                        "code": "code12"
+                    }
+                ],
+                "Leo": [
+                    {
+                        "week": "SUN",
+                        "time": "02:00",
+                        "code": "code13"
+                    }
+                ],
+                "Mia": [
+                    {
+                        "week": "MON",
+                        "time": "00:15",
+                        "code": "code14"
+                    }
+                ],
+                "Nina": [
+                    {
+                        "week": "TUE",
+                        "time": "02:00",
+                        "code": "code15"
+                    }
+                ],
+                "Oscar": [
+                    {
+                        "week": "THU",
+                        "time": "02:00",
+                        "code": "code16"
+                    }
+                ],
+                "Paul": [
+                    {
+                        "week": "WED",
+                        "time": "00:15",
+                        "code": "code17"
+                    }
+                ],
+                "Quinn": [
+                    {
+                        "week": "FRI",
+                        "time": "00:15",
+                        "code": "code18"
+                    }
+                ],
+                "Rachel": [
+                    {
+                        "week": "SAT",
+                        "time": "00:15",
+                        "code": "code19"
+                    }
+                ],
+                "Sam": [
+                    {
+                        "week": "SUN",
+                        "time": "00:15",
+                        "code": "code20"
+                    }
+                ],
+                "Tom": [
+                    {
+                        "week": "TUE",
+                        "time": "00:15",
+                        "code": "code21"
+                    }
+                ]
+            }
         }
-      }
     }
-  }
+}

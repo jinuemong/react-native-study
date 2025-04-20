@@ -3,12 +3,9 @@ import {
   GroupedSchedule,
   UserSchedule,
   Weekday,
-  Weekend,
-  Week,
 } from '../types/schedule';
 
 const weekdays: Weekday[] = ['MON', 'TUE', 'WED', 'THU', 'FRI'];
-const weekends: Weekend[] = ['SAT', 'SUN'];
 
 export const groupScheduleByTime = (users: UserSchedule): GroupedResult => {
   const weekdaysResult: GroupedSchedule = {};

@@ -4,8 +4,9 @@
  *
  * @format
  */
-
+//리액트 컴포넌트 만들 때 무조건 활용 s
 import React from 'react';
+
 import type {PropsWithChildren} from 'react';
 import {
   ScrollView,
@@ -72,6 +73,7 @@ function App(): React.JSX.Element {
    */
   const safePadding = '5%';
 
+  // JSX 문법 : 함수형 컴포넌트 내부에서 XML 반환 
   return (
     <View style={backgroundStyle}>
       <StatusBar
@@ -128,4 +130,5 @@ const styles = StyleSheet.create({
   },
 });
 
+// 컴포넌트를 내보내서, 다른 파일에서 불러와서 사용 
 export default App;
