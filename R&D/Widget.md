@@ -181,3 +181,25 @@ iOS에서는 React Native 앱과 위젯 간의 데이터 공유를 위해 **App 
 // Swift - UserDefaults에 저장된 데이터 읽기
 let defaults = UserDefaults(suiteName: "group.com.example.myapp")
 let schedule = defaults?.string(forKey: "boss_schedule") ?? "No schedule"
+```
+
+## 안드로이드 위젯 
+
+- https://github.com/sAleksovski/react-native-android-widget
+
+### 바탕화면 위젯 
+홈 화면이나 잠금 화면에 고정되는 작은 인터페이스
+	•	앱을 실행하지 않고도 정보를 보여주거나 간단한 상호작용 가능
+	•	플랫폼 별 네이티브 구현 필수
+	•	Android: AppWidgetProvider
+	•	iOS: WidgetKit (SwiftUI)
+
+React Native는 앱 실행 중의 화면(UI)만 다루는 프레임워크고,
+바탕화면(Home screen)에 고정되는 위젯은 각 플랫폼의 네이티브 영역에서만 지원 
+
+[ React Native 앱 ]
+     ↕ 공유 데이터 (SharedPreferences / AppGroup)
+[ Android 위젯 ]         [ iOS 위젯 ]
+  (Kotlin/Java)           (Swift)
+
+  - 	Foreground service 형태로 작은 UI를 유지하는 등의 유사 위젯 기능
