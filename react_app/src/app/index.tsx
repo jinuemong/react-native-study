@@ -1,67 +1,25 @@
 
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 24,
-    justifyContent: 'center',
-    backgroundColor: '#fff',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginBottom: 32,
-  },
-  content: {
-    alignItems: 'center',
-    marginBottom: 40,
-  },
-  message: {
-    fontSize: 16,
-    marginBottom: 8,
-  },
-  location: {
-    fontSize: 14,
-    color: '#666',
-  },
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    gap: 16,
-  },
-  button: {
-    flex: 1,
-    paddingVertical: 14,
-    backgroundColor: '#007AFF',
-    borderRadius: 8,
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-});
+import React, { useEffect, useState } from 'react';
+import { useAuthStore } from '@/entities/model';
+import NativeNotificationSpec from '@/shared/lib/spec/NativeNotificationSpec';
+import { MainView } from '@/pages';
 
 export function AuthenticatorScreen() {
+  const setAuthData = useAuthStore((state) => state.setAuthData);
+
+  useEffect(() => {
+    if (!NativeNotificationSpec) return;
+    NativeNotificationSpec.saveState().then((data) => {
+      if (data) {
+        setAuthData({
+          requester: data.requester,
+          location: data.location,
+          time: data.time,
+        });
+      }
+    });
+  }, []);
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>인증기</Text>
-      <View style={styles.content}>
-        <Text style={styles.message}>에서 로그인 시도 중입니다</Text>
-        <Text style={styles.location}>sample_location</Text>
-      </View>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>거부</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>승인</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+    < MainView />
   );
 }
